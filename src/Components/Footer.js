@@ -3,8 +3,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import styled from "styled-components";
 
 const Foot = styled.div`
+    display:flex;
+    flex-direction:column;
     width:100%;
-    height:360px;
+    height:340px;
     position:absolute;
     bottom:0;
     background-color:${props => props.theme.blueColor};
@@ -16,10 +18,10 @@ const Label = styled.div`
 
 
 const Box = styled.div`
+    margin:0 auto;
     display:flex;
     justify-content:center;
-    margin:0 auto;
-    margin-top:36px;
+    margin-top:46px;
     width:${props => props.theme.maxWidth};
     text-align:center;
     background-color:red;
@@ -33,18 +35,22 @@ const InfoBox = styled.p`
     margin-top:32px;
 `
 const FooterLast = styled.div`
-    width:1200px;
-    background-color:#646566;
-    border-radius: 5px 5px 0px 0px;
-    position:absolute;
-    bottom:0;
     margin:0 auto;
+    width:1200px;
+    height:50px;
+    background-color:#646566;
+    border-radius: 15px 15px 0px 0px;
+    position:absolute;
+    left:10.5%;
+    bottom:0;
+    padding:20px;
+    padding-left:90px;
 
 
 `
 
-const Footer=() => (
-
+export default () => (
+    
     <Foot>
       <Box>
           사진이 들어갈 자리
@@ -72,7 +78,6 @@ const Footer=() => (
     
 )
 
-export default Footer;
 
 {/* <Switch>
         <Route exact path="/" component={} />
