@@ -1,2 +1,2 @@
-import DemoPresenter from './DemoPresenter';
-export default DemoPresenter;
+import Demo from './Demo';
+export default Demo;

@@ -4,32 +4,38 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     width:100%;
-    height:100vh;
+    height:1200px;
     display:grid;
-    grid-template-columns: 1fr  7fr;
-    grid-template-rows: 50px 100vh 100vh;
+    grid-template-columns: 2fr  8fr;
+    grid-template-rows:  100vh 100vh;
     background-color:blue;
 `
 
 const Header = styled.div`
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    z-index: 2;
-    border-bottom:solid 1px grey;
+    width:100%;
+    height:40px;
+    border-bottom:solid 8px grey;
     background-color:red;
+    position:absolute;
+    top:0;
 
 `
-
+const Slide = styled.div`
+    grid-column:1;
+    grid-row:1;
+    background-color:green;  
+`
 
 
 
 
 const DemoA=() => (
-    
-    <Wrapper>
-        <Header>sad</Header>
-    </Wrapper>
+    <>
+        <Header>sad</Header>    
+        <Wrapper>
+            <Slide>sss</Slide>
+        </Wrapper>
+    </>
 )
 
 

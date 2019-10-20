@@ -7,10 +7,11 @@ const Foot = styled.div`
     flex-direction:column;
     width:100%;
     height:340px;
-    position:absolute;
-    bottom:0;
+   
     background-color:${props => props.theme.whiteGreyColor};
 `
+ // position:absolute;
+    // bottom:0;
 
 const Label = styled.div`
     margin:13px;
