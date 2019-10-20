@@ -9,22 +9,23 @@ const Foot = styled.div`
     height:340px;
     position:absolute;
     bottom:0;
-    background-color:${props => props.theme.blueColor};
+    background-color:${props => props.theme.whiteGreyColor};
 `
 
 const Label = styled.div`
     margin:13px;
+    cursor:pointer;
 `
 
 
 const Box = styled.div`
+    font-size: 14px;
     margin:0 auto;
     display:flex;
     justify-content:center;
     margin-top:46px;
     width:${props => props.theme.maxWidth};
     text-align:center;
-    background-color:red;
 `
 
 const InfoBox = styled.p`
@@ -35,13 +36,16 @@ const InfoBox = styled.p`
     margin-top:32px;
 `
 const FooterLast = styled.div`
-    margin:0 auto;
     width:1200px;
     height:50px;
-    background-color:#646566;
+    color:#646566;
+    background-color:#302F2F;
     border-radius: 15px 15px 0px 0px;
     position:absolute;
-    left:10.5%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     bottom:0;
     padding:20px;
     padding-left:90px;
@@ -56,13 +60,13 @@ export default () => (
           사진이 들어갈 자리
       </Box>
       <Box>
-         <Label onClick={()=> {alert('ok')}}>회사소개</Label>
+         <Label onClick={()=> {alert('ok')}}>회사소개</Label> 
          <Label>사업분야</Label>
          <Label>주요실적</Label>
          <Label>포토폴리오</Label>
          <Label>온라인상담문의</Label>
          <Label>고객센터</Label>
-
+    {/* 봐서 라벨들 함수? */}
 
       </Box>
       <InfoBox>

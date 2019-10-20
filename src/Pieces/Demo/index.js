@@ -1,2 +1,2 @@
-import DemoContainer from './DemoContainer';
-export default DemoContainer;
+import DemoPresenter from './DemoPresenter';
+export default DemoPresenter;

@@ -25,7 +25,8 @@ export default () => {
         <GlobalStyles />
         <Router>
           <Bread>
-          <Footer/>
+            <Routes/>
+            <Footer/>
           </Bread>
         </Router>
       </>
