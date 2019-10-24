@@ -5,9 +5,10 @@ import styled from "styled-components";
 const Foot = styled.div`
     display:flex;
     flex-direction:column;
+    position: relative;
     width:100%;
     height:340px;
-   
+   border:solid 3px red ;
     background-color:${props => props.theme.whiteGreyColor};
 `
  // position:absolute;
