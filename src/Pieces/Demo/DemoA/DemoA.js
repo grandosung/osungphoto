@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import c9 from './c9.jpg';
+import Header from '../../../Components/Header'
+import Lang from '../../../Utils/Language'
 
 
 const Wrapper = styled.div`
@@ -11,14 +13,7 @@ const Wrapper = styled.div`
     grid-template-rows:  100vh 100vh;
 `
 
-const Header = styled.div`
-    width:100%;
-    height:58px;
-    border-bottom:solid 1px grey;
-    position:absolute;
-    top:0;
 
-`
 const Left = styled.div`
     grid-column:1;
     grid-row:1;
@@ -35,7 +30,7 @@ const Sidepic = styled.div`
     border:solid 2px red;
     margin-bottom:30px;
     margin-left:40px;
-    transition: transform 1s ease;
+    transition: transform 1.5s ease;
     img{
         width:100%;
         height:100%;
@@ -75,32 +70,32 @@ const DemoA=() => (
                 <Sidepic>
                     <img  src={c9}/>
                     <LeftText>
-                         INTERIOR<br/><br/>
-                         인테리어
+                         PEOPLE<br/><br/>
+                         {Lang.texts.people}
                     </LeftText>
 
                 </Sidepic>
                 <Sidepic>
                     <img src={c9}/>
                     <LeftText>
-                        REMODELING<br/><br/>
-                        리모델링
+                        NATURE<br/><br/>
+                        {Lang.texts.nature}
                     </LeftText>
                 </Sidepic>
                 <Sidepic>
                     <img src={c9}/>
                     <LeftText>
-                        DISPLAY<br/><br/>
-                        디스플레이
+                        NIGHT<br/><br/>
+                        {Lang.texts.night_view}
                     </LeftText>
 
                 </Sidepic>
             </Left>
             <Right background={'./c9.jpg'}>
-            Design with
+            {/* Design with
 DISTINCTIONI don't think it's just a physical space to build and decorate buildings.
 It's a place to work in a fun place, a rest area, and a place to live for future dreams.
-포토폴리오 부분까지 데모A
+포토폴리오 부분까지 데모A */}
             </Right>
         </Wrapper>
     </>
