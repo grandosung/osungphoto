@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import styled from "styled-components";
+import Lang from '../Utils/Language'
 
 const Foot = styled.div`
     display:flex;
@@ -8,7 +9,6 @@ const Foot = styled.div`
     position: relative;
     width:100%;
     height:340px;
-   border:solid 3px red ;
     background-color:${props => props.theme.whiteGreyColor};
 `
  // position:absolute;
@@ -54,7 +54,7 @@ const FooterLast = styled.div`
 
 
 `
-
+//온라인 신청하기 신청목록 
 export default () => (
     
     <Foot>
@@ -62,18 +62,16 @@ export default () => (
           사진이 들어갈 자리
       </Box>
       <Box>
-         <Label onClick={()=> {alert('ok')}}>회사소개</Label> 
-         <Label>사업분야</Label>
-         <Label>주요실적</Label>
-         <Label>포토폴리오</Label>
-         <Label>온라인상담문의</Label>
-         <Label>고객센터</Label>
+         <Label onClick={()=> {alert('ok')}}>{Lang.texts.com_intro}</Label> 
+         <Label>{Lang.texts.category}</Label>
+         <Label>{Lang.texts.portfolio}</Label>
+         <Label>{Lang.texts.online}</Label>
     {/* 봐서 라벨들 함수? */}
 
       </Box>
       <InfoBox>
          경기도 부천시 원미구 중동 1152 상록센트럴타워 505호 샤이닝(Make24팀)<br/><br/>
-         사업자 번호 : 130-37-46318(등록2007년) 통신판매업종신고 : 제2010-경기부천-924호 상호 : 샤이닝 대표 : 오성민 <br/><br/>
+         사업자 번호 : 130-37-46318(등록2007년) 통신판매업종신고 : 제2010-경기부천-924호 상호 : 샤이닝 대표 : 고경민 <br/><br/>
          고객센터:1544-0634 팩스:0505-200-6060 이메일:hdweb@hdweb.co.kr<br/><br/>
       </InfoBox>
       <FooterLast>

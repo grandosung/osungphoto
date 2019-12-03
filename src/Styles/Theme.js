@@ -4,6 +4,7 @@ const BORDER_RADIUS = "4px";
 export default {
   normalWidth:"700px",
   maxWidth: "935px",
+  fullWidth: `${window.screen.width}px`,
   bgColor: "#FAFAFA",
   blackColor: "#262626",
   whiteGreyColor:"#f7f7f7",

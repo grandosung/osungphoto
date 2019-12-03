@@ -4,7 +4,6 @@ import Demo from '../Pieces/Demo'
 
 
 const Routes=() => (
-    
     <Switch>
         <Route exact path="/" component={Demo} />
         <Route />

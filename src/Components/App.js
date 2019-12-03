@@ -7,6 +7,7 @@ import GlobalStyles from '../Styles/GlobalStyles';
 import Theme from "../Styles/Theme";
 import Routes from './Routes';
 import Button from './Button'
+import Header from './Header';
 import Footer from './Footer';
 
 const Bread = styled.div`
@@ -25,8 +26,9 @@ export default () => {
         <GlobalStyles />
         <Router>
           <Bread>
+            <Header/>
             <Routes/>
-            <Footer/>
+           { window.location.pathname === '/' ? null : <Footer/>}
           </Bread>
         </Router>
       </>
