@@ -8,11 +8,11 @@ const Foot = styled.div`
     flex-direction:column;
     position: relative;
     width:100%;
-    height:340px;
+    height:280px;
     background-color:${props => props.theme.whiteGreyColor};
+
 `
- // position:absolute;
-    // bottom:0;
+ 
 
 const Label = styled.div`
     margin:13px;
@@ -61,14 +61,7 @@ export default () => (
       <Box>
           사진이 들어갈 자리
       </Box>
-      <Box>
-         <Label onClick={()=> {alert('ok')}}>{Lang.texts.com_intro}</Label> 
-         <Label>{Lang.texts.category}</Label>
-         <Label>{Lang.texts.portfolio}</Label>
-         <Label>{Lang.texts.online}</Label>
-    {/* 봐서 라벨들 함수? */}
 
-      </Box>
       <InfoBox>
          경기도 부천시 원미구 중동 1152 상록센트럴타워 505호 샤이닝(Make24팀)<br/><br/>
          사업자 번호 : 130-37-46318(등록2007년) 통신판매업종신고 : 제2010-경기부천-924호 상호 : 샤이닝 대표 : 고경민 <br/><br/>

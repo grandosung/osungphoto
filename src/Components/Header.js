@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
 import Lang from '../Utils/Language'
+import  {  Link } from "react-router-dom";
+
+
+//헤더 색깔 인덱스만 반
 
 const Header = styled.div`
-    width:${props=> props.theme.fullWidth};
+    width:100%;
+    background-color:${props=> props.theme.blackOpacity};
     min-width:1200px;
     height:58px;
     border-bottom:solid 1px grey;
@@ -23,28 +28,17 @@ const Drops = styled.div`
     float:left;
 `
 const Logo = styled.div`
-    margin:4px 0 0 62px;
+    margin: 4px 0 0 80px;
+    padding-top: 8px;
+    border:solid 1px white;
+    color:white;
     float:left;
-    width:400px;
-    text-transform: uppercase;
-    font-family: verdana;
-    font-size: 2.5em;
-    font-weight: 600;
-    color: aqua;
-    text-shadow: 1px 1px 1px #919191,
-        1px 2px 1px #919191,
-        1px 3px 1px #919191,
-        1px 4px 1px #919191,
-        1px 5px 1px #919191,
-        1px 6px 1px #919191,
-        1px 7px 1px #919191,
-        1px 8px 1px #919191,
-        1px 9px 1px #919191,
-        1px 10px 1px #919191,
-    1px 14px 2px rgba(16,16,16,0.4),
-    1px 17px 5px rgba(16,16,16,0.2),
-    1px 20px 30px rgba(16,16,16,0.2),
-    1px 20px 50px rgba(16,16,16,0.4);
+    width:200px;
+    height:46px;
+    text-align:center;
+    font-size: 22pt;
+    font-family: ${props => props.theme.font};
+
 `
 
 const Subs = styled.div`
@@ -60,14 +54,14 @@ const Sub = styled.div`
     width:94px;
     height:34px;
     text-align:center;
-    color: black;
+    color: white;
     text-decoration: none;
     padding-top:10px;
     font-size:15px;
     cursor:pointer;
-    background-color:${props => props.theme.whiteGreyColor};
+    background-color:${props=> props.theme.blackOpacity};
     &:hover {
-        background-color:${props => props.theme.lightGreyColor};
+        background-color:${props => props.theme.blackColor};
     }
 
 `
@@ -89,43 +83,75 @@ const Item = styled.div`
     text-align:center;
 
 `
+const man = [
+    {
+        "comintro":["comhello", "comlocation"]
+    },
+    {
+        "category":["people","nature","nightview"]
+    },
+    {
+        "portfolio":[]
+    },
+    {
+        "online":["onenroll","onlist"]
+    },
+];
 
+
+const Makelist =() => {
+    
+
+    const guy = man.map((mon,id) => {
+        const title = Object.keys(mon)[0]
+        const subs = Object.values(mon)[0]
+        const boys = subs.map((tue,idx) => {
+            
+           return  (
+            <Sub key={idx}>
+                <Link to={
+                    {
+                        pathname:`/${title}/${tue}`,
+                        state:{title,subs}
+                    }
+                 }
+                 style={{ textDecoration: 'none', color: 'white' }} 
+                 >
+                    {Lang.texts[tue]}
+                </Link>
+            </Sub>
+           )
+        })
+
+       return  (
+        <Items key={id}>
+        <Item>{Lang.texts[title]}</Item>
+            <Subs>
+                {boys}
+            </Subs>
+        </Items>
+       )
+    })
+    return guy;
+};
 
 export default () => (
-    <Header>
-     <Logo>Bonta-Kun</Logo>
-     <Drops>
-        <Items>
-        <Item>{Lang.texts.com_intro}</Item>
-            <Subs>
-                <Sub>{Lang.texts.com_hello}</Sub>
-                <Sub>{Lang.texts.com_location}</Sub>
-            </Subs>
-        </Items>
-        <Items>
-        <Item>{Lang.texts.category}</Item>
-            <Subs>
-                <Sub>{Lang.texts.people}</Sub>
-                <Sub>{Lang.texts.nature}</Sub>
-                <Sub>{Lang.texts.night_view}</Sub>
-            </Subs>
-        </Items>
-        <Items><Item>{Lang.texts.portfolio}</Item></Items>
-        <Items>
-            <Item>{Lang.texts.online}</Item>
-            <Subs>
-                <Sub>{Lang.texts.on_enroll}</Sub>
-                <Sub>{Lang.texts.on_list}</Sub>
-            </Subs>
-        </Items>
-        <Items>
-            <Item>Language</Item>
-            <Subs>
-                <Sub>日本語</Sub>
-                <Sub>한국어</Sub>
-            </Subs>
-        </Items>
-     </Drops>   
     
-    </Header>
-)
+
+   <Header>
+    <Logo>BONTA KUN!</Logo>
+   
+    <Drops>
+        {Makelist()}
+       <Items>
+           <Item>LANGUAGE</Item>
+           <Subs>
+               <Sub>日本語</Sub>
+               <Sub>한국어</Sub>
+           </Subs>
+       </Items>
+    </Drops>   
+   
+   </Header>
+  );
+ 

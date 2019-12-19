@@ -1,14 +1,13 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import styled, { ThemeProvider } from "styled-components";
-import { HashRouter as Router } from "react-router-dom";
+import {  BrowserRouter as Router } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import GlobalStyles from '../Styles/GlobalStyles';
 import Theme from "../Styles/Theme";
 import Routes from './Routes';
 import Button from './Button'
 import Header from './Header';
-import Footer from './Footer';
 
 const Bread = styled.div`
   margin:0 auto;
@@ -19,6 +18,7 @@ const Bread = styled.div`
 
 
 export default () => {
+  
 
   return (
     <ThemeProvider theme={Theme}>
@@ -28,7 +28,6 @@ export default () => {
           <Bread>
             <Header/>
             <Routes/>
-           { window.location.pathname === '/' ? null : <Footer/>}
           </Bread>
         </Router>
       </>
